@@ -12,8 +12,8 @@ namespace Задание_12
         {
             Console.Write("Введите радиус окружности: ");
             double r = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("          Длина окружности равна = {0:f1}", Circle.ToLengthCircle(r));
-            Console.WriteLine("          Площадь окружности равна = {0:f1}", Circle.ToSquareCircle(r));
+            Console.WriteLine("          Длина окружности равна = {0:f1}", Circle.LengthCircle(r));
+            Console.WriteLine("          Площадь окружности равна = {0:f1}", Circle.SquareCircle(r));
             Console.Write("Введите кординату 'x' точки: ");
             double x1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Введите кординату 'y' точки: ");
@@ -22,23 +22,23 @@ namespace Задание_12
             double x2 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Введите кординату 'y' центра окружности: ");
             double y2 = Convert.ToDouble(Console.ReadLine());
-            double point = Circle.ToPointCircle(r, x1, y1, x2, y2);
+            double point = Circle.PointCircle(r, x1, y1, x2, y2);
             Console.ReadLine();
         }
     }
     class Circle
     {
-        public static double ToLengthCircle(double radius)
+        public static double LengthCircle(double radius)
         {
             double length = 2 * Math.PI * radius;
             return length;
         }
-        public static double ToSquareCircle(double radius)
+        public static double SquareCircle(double radius)
         {
             double square = Math.PI * Math.Pow(radius, 2);
             return square;
         }
-        public static double ToPointCircle(double radius, double xPoint, double yPoint, double xCentr, double yCentr)
+        public static double PointCircle(double radius, double xPoint, double yPoint, double xCentr, double yCentr)
         {
             double point = Math.Pow(xPoint - xCentr, 2) + Math.Pow(yPoint - yCentr, 2);
             if (point <= Math.Pow(radius, 2))
